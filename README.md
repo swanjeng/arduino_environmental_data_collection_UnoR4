@@ -38,13 +38,15 @@ The SD card module, the DHT22 sensor and the BME280 sensor are connected to the 
 
 The programs for Arduino are in `environmentDataCollection/`.
 
+The libraries needed are: NTPClient, PMS Library, DHT Library and Adafruit BME280 Library. (If there's anything wrong, please correct me. It's nearly a year ago)
+
 All the configurations available are in configuration.h. The contents are shown below.
 
 ```cpp
-#define fileName "LOG3.txt" // the file in SD card
+#define fileName "log.txt" // the file in SD card
 #define ssid "SSID"
 #define pass "PASS"
-#define interval 30000 // collection interval (ms)
+#define interval 30000     // collection interval (ms)
 ```
 
 Before inserting the micro SD card into the SD card module, make sure that the micro SD card is formatted as FAT32.
@@ -67,7 +69,7 @@ Before running the Python program, please make sure that the Serial Monitor in A
 
 ```python
 ser = serial.Serial("COM3", 115200) # change COM3 to your Arduino's Serial port.
-file = "123456789.txt" # specify your file name here
+file = "data.txt" # specify your file name here
 ```
 
 Then, it is the data analyzing part.
